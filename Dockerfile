@@ -93,7 +93,7 @@ RUN mkdir -p /var/lib/mysql /var/run/mysqld \
 VOLUME /var/lib/mysql
 
 COPY docker-entrypoint.sh /usr/local/bin/
-RUN RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
 RUN ln -s /usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
