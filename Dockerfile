@@ -62,27 +62,8 @@ RUN mkdir -p /etc/mysql/conf.d \
 		echo 'datadir = /var/lib/mysql'; \
 		echo '!includedir /etc/mysql/conf.d/'; \
 		echo 'server-id = 1'; \
-		echo 'log-bin = mysql-bin'; \
-		echo 'log-bin-index = binlogs.index'; \
-		echo 'binlog-format = mixed'; \
-		echo 'expire_logs_days = 1'; \
-		echo 'skip-host-cache'; \
-		echo 'skip-name-resolve'; \
 		echo 'character-set-server = utf8'; \
 		echo 'max_connections = 1500'; \
-		echo 'lower_case_table_names = 1'; \
-		echo 'event_scheduler = on'; \
-		echo 'log_bin_trust_function_creators = on'; \
-		echo 'sql_mode = STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'; \
-		echo 'slave_skip_errors = 1062'; \
-		echo 'wait_timeout = 100'; \
-		echo 'interactive_timeout = 100'; \
-		# client configuration
-		echo '[client]'; \
-		echo 'default-character-set = utf8'; \
-		# mysqld safe configuration
-		echo '[mysqld_safe]'; \
-		echo 'log-error = /var/log/mysqld.log'; \
 	} > /etc/mysql/my.cnf
 
 RUN mkdir -p /var/lib/mysql /var/run/mysqld \
