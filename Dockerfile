@@ -65,6 +65,8 @@ RUN mkdir -p /etc/mysql/conf.d \
 		echo 'log-bin = mysql-bin'; \
 		echo 'relay-log = relay-bin'; \
 		echo 'relay-log-index = relay-bin-index'; \
+		echo 'binlog-ignore-db = mysql'; \
+		echo 'binlog-ignore-db = information_schema'; \
 		echo 'character-set-server = utf8'; \
 		echo 'max_connections = 1500'; \
 	} > /etc/mysql/my.cnf
