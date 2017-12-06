@@ -62,6 +62,9 @@ RUN mkdir -p /etc/mysql/conf.d \
 		echo 'datadir = /var/lib/mysql'; \
 		echo '!includedir /etc/mysql/conf.d/'; \
 		echo 'server-id = 1'; \
+		echo 'log-bin = mysql-bin'; \
+		echo 'relay-log = relay-bin'; \
+		echo 'relay-log-index = relay-bin-index'; \
 		echo 'character-set-server = utf8'; \
 		echo 'max_connections = 1500'; \
 	} > /etc/mysql/my.cnf
